@@ -7,6 +7,10 @@ from core.ControleInventario import ControleInventario
 
 recipe_teste = {
     'input': [
+        # {
+        #     'nome': 'placa_de_ferro',
+        #     'qnt': 40
+        # },
         {
             'nome': 'minerio_de_ferro',
             'qnt': 40
@@ -15,7 +19,22 @@ recipe_teste = {
     'output': [
         {
             'nome': 'placa_de_ferro',
-            'qnt': 20
+            'qnt': 40
+        }
+    ]
+}
+    
+recipe_teste1 = {
+    'input': [
+        {
+            'nome': 'placa_de_ferro',
+            'qnt': 40
+        }
+    ],
+    'output': [
+        {
+            'nome': 'minerio_de_ferro',
+            'qnt': 40
         }
     ]
 }

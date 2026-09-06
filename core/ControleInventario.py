@@ -1,3 +1,4 @@
+from utils import formatar_nome_recipe
 import json
 
 class ControleInventario:
@@ -15,12 +16,24 @@ class ControleInventario:
 
     #Core das mudanças ----------------------------
     def adicionar_item(self, _item, _qnt):
-        self.inventario[_item]['qnt'] += _qnt
+        
+        #Se nao tiver o item no inventario ele adiciona o objeto
+        if _item not in self.inventario:
+            self.inventario[_item] = {
+                "nome": formatar_nome_recipe(_item),
+                "qnt": _qnt
+            } 
+        else:
+            self.inventario[_item]['qnt'] += _qnt
+            
         print(f'{_qnt} {_item} adicionados ao inventario')
         self.atualizar_inventario()
         
     def remover_item(self, _item, _qnt):
         self.inventario[_item]['qnt'] -= _qnt
+        if self.inventario[_item]['qnt'] <= 0:
+            self.inventario.pop(_item)
+
         print(f'{_qnt} {_item} removidos do inventario')
         self.atualizar_inventario()
     # ---------------------------------------------
@@ -31,10 +44,11 @@ class ControleInventario:
         for _input_item in _receita['input']:
             self.remover_item(_input_item['nome'], _input_item['qnt'])
             
-        for _output_item in _receita['output']:
+        for _output_item in _receita['output']:                
             self.adicionar_item((_output_item['nome']), _output_item['qnt'])
             
             
     def atualizar_inventario(self):
         with open('data/inventario.json', 'w', encoding='utf-8') as arq_inventario:
             json.dump(self.inventario, arq_inventario, indent=4, ensure_ascii=False)
+            
