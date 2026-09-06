@@ -1,7 +1,7 @@
 {
     "minerio_de_ferro": {
         "nome": "Minerio de Ferro",
-        "qnt": 14452
+        "qnt": 14252
     },
     "minerio_de_cobre": {
         "nome": "Minerio de Cobre",
@@ -9,7 +9,7 @@
     },
     "placa_de_ferro": {
         "nome": "Placa de Ferro",
-        "qnt": 1
+        "qnt": 101
     },
     "fio_de_cobre": {
         "nome": "Fio de Cobre",

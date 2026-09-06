@@ -13,6 +13,7 @@ class ControleInventario:
             # if item['qnt'] > 0:
             print(f'{item['nome']}: {item['qnt']}')
 
+    #Core das mudanças ----------------------------
     def adicionar_item(self, _item, _qnt):
         self.inventario[_item]['qnt'] += _qnt
         print(f'{_qnt} {_item} adicionados ao inventario')
@@ -22,15 +23,16 @@ class ControleInventario:
         self.inventario[_item]['qnt'] -= _qnt
         print(f'{_qnt} {_item} removidos do inventario')
         self.atualizar_inventario()
-        
+    # ---------------------------------------------
+    
     def craftar_item(self, _receita):
         
-        #Tirando os itens do inventario
-        for item in _receita:
-            self.remover_item(item['nome'], item['qnt'])
+        #NAO PRECISA INFORMAR QUANTIDADE PORQUE JA VOU RECEBER ELA FORMATADA
+        for _input_item in _receita['input']:
+            self.remover_item(_input_item['nome'], _input_item['qnt'])
             
-            self.adicionar_item((item['nome']), item['qnt'])
-            print(f'{item['qnt']} {item['nome']} adicionados ao inventario')
+        for _output_item in _receita['output']:
+            self.adicionar_item((_output_item['nome']), _output_item['qnt'])
             
             
     def atualizar_inventario(self):

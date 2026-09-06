@@ -1,10 +1,14 @@
+import json
 import math
 
 class CraftingCalculator:
-    def __init__(self, recipes_db):
-        self.recipes_db = recipes_db
+    def __init__(self):
         
-    def agrupador_recipes(self, _recipe):
+        with open('data/recipes.json', 'r', encoding='utf-8') as arq_recipes:
+            self.recipes_db = json.load(arq_recipes)
+
+        
+    def agrupador_recipes(self, _recipe): #Metodo mais inutil da humanidade
 
         _recipe_final = []
         
