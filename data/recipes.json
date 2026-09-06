@@ -1,0 +1,38 @@
+{
+	"placa_de_ferro": {
+		"nome": "Placa de Ferro",
+		"ingredientes": [
+			{
+				"nome": "minerio_de_ferro",
+				"qnt": 2
+			}
+		],
+		"resultado": 1
+	},
+
+	"fio_de_cobre": {
+		"nome": "Fio de Cobre",
+		"ingredientes": [
+			{
+                "nome": "minerio_de_cobre",
+				"qnt": 1
+			}
+		],
+		"resultado": 2
+	},
+
+	"circuito_basico": {
+		"nome": "Circuito Basico",
+		"ingredientes": [
+			{
+				"nome": "placa_de_ferro",
+				"qnt": 2
+			},
+			{
+				"nome": "fio_de_cobre",
+				"qnt": 3
+			}
+		],
+		"resultado": 1
+	}
+}

@@ -1,76 +1,16 @@
-import math
+import json
 
 from core.ConsoleUi import *
 
-RECIPES = {
-    #Placas -----------------
-    "placa_de_ferro": {
-        "nome": "Placa de Ferro",
-        "ingredientes": [
-            {
-                "nome": "minerio_de_ferro",
-                "qnt": 2    
-            }
-        ],
-        "resultado": 1
-    },
+#Lendo as recipes
+with open('data/recipes.json', 'r', encoding='utf-8') as arq_recipes:
+    RECIPES = json.load(arq_recipes)
+
     
-    #Cabos -----------------
-    "fio_de_cobre": {
-        "nome": "Fio de Cobre",
-        "ingredientes": [
-            {
-                "nome": "minerio_de_cobre",
-                "qnt": 1    
-            }
-        ],
-        "resultado": 2
-    },
+with open('data/inventario.json', 'r', encoding='utf-8') as arq_inventario:
+    INVENTARIO = json.load(arq_inventario)
+    print(INVENTARIO)
 
-    #Itens Complexos -------
-    "circuito_basico": {
-        "nome": "Circuito Basico",
-        "ingredientes": [
-            {
-                "nome": "placa_de_ferro",
-                "qnt": 2    
-            },
-            {
-                "nome": "fio_de_cobre",
-                "qnt": 3    
-            },
-        ],
-        "resultado": 1
-    },
-}
+# menu = ConsoleUi(RECIPES, INVENTARIO)
 
-INVENTARIO = {
-    #Minerios Brutos -----------
-    "minerio_de_ferro":{
-        "nome": "Minerio de Ferro",
-        "qnt": 0
-    },
-    "minerio_de_cobre":{
-        "nome": "Minerio de Cobre",
-        "qnt": 0
-    },
-    #Placas ----------------
-    "placa_de_ferro": {
-        "nome": "Placa de Ferro",
-        "qnt": 1400
-    },
-    #Cabos ------------------
-    "fio_de_cobre": {
-        "nome": "Fio de Cobre",
-        "qnt": 14452
-    },
-    #Itens importantes
-    "circuito_basico": {
-        "nome": "Circuito Basico",
-        "qnt": 0
-    },
-}
-
-menu = ConsoleUi(RECIPES, INVENTARIO)
-
-menu.menu_inicial()
+# menu.menu_inicial()
