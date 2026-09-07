@@ -28,16 +28,36 @@ class CraftingCalculator:
         return _recipe_final
     
     #Falta verificacao de entrada da recipe e quantidade
-    def calcular_recipe(self, _recipe, _qnt):
-        _result = []
-        for _ingrediente in _recipe['ingredientes']:
-            _temp = {
-                "nome": _ingrediente["nome"],
-                "qnt": math.ceil(((_qnt * _ingrediente["qnt"]) / _recipe["resultado"])) # => 41 / 2 -> 20,5 -> 21 arredondado
+    def calcular_recipe(self, _nome_recipe, _qnt):
+        
+        _recipe_info = self.recipes_db[_nome_recipe]
+        
+        _result = {
+            "input": [],
+            "output": []
+        }
+
+                    
+        #INPUT DA RECEITA, OS ITENS QUE VAO SER NECESSARIOS
+        for _input_item in _recipe_info['input']:
+            
+
+            #_recipe_info["output"][0] sempre é o output primario, o resto é subproduto
+            _temp_input = {
+                "nome": _input_item["nome"],
+                "qnt": math.ceil(((_qnt * _input_item["qnt"]) / _recipe_info["output"][0]["qnt"])) # => 41 / 2 -> 20,5 -> 21 arredondado
             }
 
-            _result.append(_temp)     
-        
+            _result["input"].append(_temp_input)
+            
+        #OUTPUT DA RECEITA, OS ITENS QUE VAO SER ENVIADOS PRO INVENTARIO
+        for _output_item in _recipe_info['output']:
+            _temp_output = {
+                "nome": _output_item["nome"],
+                "qnt": math.ceil(((_qnt * _output_item["qnt"]) / _recipe_info["output"][0]["qnt"]))
+            }
+            _result["output"].append(_temp_output)
+            
         return _result
     
     def calcular_crafting_tree(self, _recipe_recebida):

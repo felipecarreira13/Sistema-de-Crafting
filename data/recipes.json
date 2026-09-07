@@ -1,29 +1,43 @@
 {
 	"placa_de_ferro": {
 		"nome": "Placa de Ferro",
-		"ingredientes": [
+		"input": [
 			{
 				"nome": "minerio_de_ferro",
 				"qnt": 2
 			}
 		],
-		"resultado": 1
+		"output": [
+			{
+				"nome": "placa_de_ferro",
+				"qnt": 1
+			}
+		]
 	},
 
 	"fio_de_cobre": {
 		"nome": "Fio de Cobre",
-		"ingredientes": [
+		"input": [
 			{
-                "nome": "minerio_de_cobre",
+				"nome": "minerio_de_cobre",
 				"qnt": 1
 			}
 		],
-		"resultado": 2
+		"output": [
+			{
+				"nome": "fio_de_cobre",
+				"qnt": 2
+			},
+			{
+				"nome": "fio_de_ouro",
+				"qnt": 1
+			}
+		]
 	},
 
 	"circuito_basico": {
 		"nome": "Circuito Basico",
-		"ingredientes": [
+		"input": [
 			{
 				"nome": "placa_de_ferro",
 				"qnt": 2
@@ -33,6 +47,15 @@
 				"qnt": 3
 			}
 		],
-		"resultado": 1
+		"output": [
+			{
+				"nome": "circuito_basico",
+				"qnt": 1
+			},
+			{
+				"nome": "placa_de_ferro",
+				"qnt": 3
+			}
+		]
 	}
 }
