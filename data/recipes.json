@@ -27,10 +27,6 @@
 			{
 				"nome": "fio_de_cobre",
 				"qnt": 2
-			},
-			{
-				"nome": "fio_de_ouro",
-				"qnt": 1
 			}
 		]
 	},
@@ -51,10 +47,6 @@
 			{
 				"nome": "circuito_basico",
 				"qnt": 1
-			},
-			{
-				"nome": "placa_de_ferro",
-				"qnt": 3
 			}
 		]
 	}

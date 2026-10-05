@@ -46,8 +46,5 @@ teste = ControleInventario()
 
 # teste.adicionar_item("fio_de_cobre", 100)
 # teste.craftar_item(recipe_teste)
-
-teste_supremo = calculadora.calcular_recipe('circuito_basico', 10)
-
-for chave, cu in teste_supremo.items():
-    print(f'{chave}: {cu}')
+teste.adicionar_item('placa_de_ferro', 1000)
+teste.adicionar_item('fio_de_cobre', 1000)

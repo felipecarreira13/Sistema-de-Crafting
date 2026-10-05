@@ -7,16 +7,16 @@
         "nome": "Minerio de Cobre",
         "qnt": 1280
     },
-    "fio_de_cobre": {
-        "nome": "Fio de Cobre",
-        "qnt": 240
-    },
     "circuito_basico": {
         "nome": "Circuito Basico",
-        "qnt": 60
+        "qnt": 20
     },
     "placa_de_ferro": {
         "nome": "Placa de ferro",
-        "qnt": 40
+        "qnt": 1000
+    },
+    "fio_de_cobre": {
+        "nome": "Fio de cobre",
+        "qnt": 1000
     }
 }
